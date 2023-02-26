@@ -21,7 +21,8 @@ class Plist(object):
         self.__branches = {}
 
     def read(self, path):
-        self.__plist = plistlib.readPlist(path)
+        with open(path, 'rb') as f:
+            self.__plist = plistlib.load(f)
         for obj in self.__plist['objects']:
             if 'keyword' in obj['config']:
                 self.__base = obj
@@ -37,7 +38,7 @@ class Plist(object):
 
     def write(self, path):
         if self.__plist:
-            plistlib.writePlist(self.__plist, path)
+            plistlib.dump(self.__plist, path)
 
     def get_keyword(self):
         if self.__base:

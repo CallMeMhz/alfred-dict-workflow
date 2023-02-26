@@ -4,6 +4,8 @@
 
 **支持 Mac OS 12.3 及以上版本。**
 
+**支持 python3.9+** (如果缺少 `six` 请先安装：`pip3 install six`)
+
 **请到 release 页面下载最新的 workflow，双击安装。**
 
 **为了使用方便，请设置取词快捷键。**
